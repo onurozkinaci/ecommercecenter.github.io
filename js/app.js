@@ -6,7 +6,7 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 let addedProducts = []; //Array()
-// getProductsFromStorage();
+getProductsFromStorage();
 function getProductsFromStorage(){
     //addedProducts array will be filled with the taken values from local storage;
     if(JSON.parse(localStorage.getItem("addedProducts")) && JSON.parse(localStorage.getItem("addedProducts")).length > 0){
