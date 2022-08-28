@@ -9,7 +9,7 @@ let addedProducts = []; //Array()
 getProductsFromStorage();
 function getProductsFromStorage(){
     //addedProducts array will be filled with the taken values from local storage;
-    if(JSON.parse(localStorage.getItem("addedProducts")).length > 0){
+    if(JSON.parse(localStorage.getItem("addedProducts")) && JSON.parse(localStorage.getItem("addedProducts")).length > 0){
        addedProducts = JSON.parse(localStorage.getItem("addedProducts"));
        //console.log(addedProducts);
        let ulDOM = document.querySelector("#productList");
