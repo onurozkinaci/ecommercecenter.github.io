@@ -1,0 +1,142 @@
+#input-search {
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background-color: #f7f3f3;
+    width: 700px;
+}
+
+/*Categories navbar in the header;*/
+.sub-navbar {
+    margin-top:80px; 
+    border-bottom:2px solid rgb(38, 38, 211);
+    height:45px;
+}
+
+#sub-nav li a{
+   color: #fff;
+}
+
+#sub-nav li a:hover{
+    color: rgb(80, 80, 238);
+ }
+
+.img-container img {
+    height: 180px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* #middle-product-box > .row > div {
+  margin-right: 80px;
+} */
+
+#middle-product-box, #below-product-box {
+    background-color: #fffaf6;
+    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 5%);
+    border: 1px solid;
+    border-radius: 8px;
+    height: 250px;
+    padding: 20px;
+}
+
+#btn-prev {
+    margin-left:-44px;
+    margin-top: 41px;
+    width:40px;
+    height:50px;
+}
+
+#btn-prev, #btn-prev-below {
+    margin-left:-40px; /*-verildiginde sola daha da yaklastir demis oluyorsun.*/
+    margin-top: 70px;
+    width:40px;
+    height:40px;
+    border-radius: 25px;
+    background-image: url(https://cdn.dsmcdn.com/web/production/widget-product-slider-left.png);
+    background-repeat: no-repeat;
+    background-position: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 30%);
+}
+
+#btn-next,#btn-next-below {
+    margin-right:-40px;
+    margin-top: 70px;
+    width:40px;
+    height:40px;
+    border-radius: 25px;
+    background-image: url(https://cdn.dsmcdn.com/web/production/widget-product-slider-right.png);
+    background-repeat: no-repeat;
+    background-position: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 30%);
+}
+
+/*???????hover sonrasinda okun rengini beyaz yapmak icin tekrar bak???? */
+#btn-prev:hover, #btn-next:hover ,
+#btn-prev-below:hover, #btn-next-below:hover {
+    background-color: rgb(239, 118, 54);
+    /* color: white; */
+    /* background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-89-xxl.png);
+    background-size: 20px 20px; */
+}
+
+/*The bg-color for the text below categories without hover(at the beginning)*/
+.bg-bottom {
+    background-color:#1b1b1b;
+}
+
+/* To change the size of image(zooming to it) with the text below of it
+ when the user hover on it; */
+.img-container:hover > .zoom,
+.img-container:hover > .bg-bottom
+ {
+    transform: scale(1.02); /*increasing the size of objects by specified percent amount to provide zooming for image when hover on it*/
+    border: 1px solid rgb(93, 0, 255);
+    transition: transform 1s ease; /*hover aninda gecis eklendi*/
+    background-color: rgb(93, 0, 255); /*to change the bottom text's background-color*/
+    /* object-fit: cover; */
+}
+
+.footer-list {
+    margin:0;
+    padding:0;
+}
+
+.footer-list a{
+    color: white;
+    text-decoration: none; /*to remove the underline for the links*/
+}
+
+#fl-2 {
+    list-style: none;
+    margin-left:65px;
+}
+
+#fl-2 svg {
+    border:1px solid white;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.card-price{
+    color: rgb(93, 0, 255);
+}
+
+/* In order to give a feature when the user hover on the image 
+of added product in the shopping-bag */
+.pimage-bag:hover {
+   cursor: pointer;
+   /* transform: scale(5); */
+   /* position: absolute; */
+   
+}
+
+/* For the products on the card box */
+.box-product:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+

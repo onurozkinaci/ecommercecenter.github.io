@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Erkek Giyim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+        $("#input-search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".card").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+      });
+    </script>
+    <style>
+        .card {
+            width: 300px;
+            height: 550px;
+        }
+        .btn-add {
+            width: 110px;
+            height: 25px;
+            margin-left: auto;
+            padding-top: 0px;
+            border-radius: 20px;
+            margin-top: -10px;
+        }
+        
+        /* To change the size of card's image(zooming to it) when the user hover on it; */
+        .card-img-top:hover
+        {   
+            cursor: pointer;
+            transform: scale(1.01); /*increasing the size of objects by specified percent amount to provide zooming for image when hover on it*/
+            transition: transform 1s ease; /*hover aninda gecis eklendi*/
+        }
+
+    </style>
+  </head>
+  <body>
+    <header>
+        <!--fixed-top eklendi ile navbar yukari sabitlendi, sayfada scroll ile degisiklik yapilsa da ayni yerde gozukecek(en yukarida);-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" id="logo">
+                    <img class="mb-3 mt-2"
+                        src="https://seeklogo.com/images/E/e-commerce-business-company-logo-8E5010F4E3-seeklogo.com.png"
+                        alt="e-commerce-logo" width="100" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="d-flex mx-auto" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search what you want..."
+                            aria-label="Search" maxlength="50" autocomplete="off" id="input-search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item dropdown me-2">
+                            <!-- "data-bs-toggle="dropdown", bir dropdown'u tetiklemek icin her zaman gereklidir -->
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                </svg>
+                                Hesabım
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Siparişlerim</a></li>
+                                <li><a class="dropdown-item" href="#">Kullanıcı Bilgilerim</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Çıkış Yap</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-heart" viewBox="0 0 16 16">
+                                    <path
+                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                                </svg>
+                                Favorilerim
+                            </a>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="shopping-bag.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                </svg>
+                                Sepetim
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Categories navbar; -->
+        <div class="navbar sub-navbar bg-dark">
+            <div class="container">
+                <ul class="nav" id="sub-nav">
+                    <!--nav-tabs-->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="kadin-giyim.html">Kadın</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="erkek-giyim.html">Erkek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="elektronik-urunler.html">Elektronik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kozmetik-urunleri.html">Kozmetik</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <!-- To give successfully added product message with toast; -->
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="toast hide align-items-center text-bg-success border-0" style="position: absolute; top:-10px; right:20px; width:200px;" 
+                  role="alert" aria-live="assertive" aria-atomic="true" id="success">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        Added successfully.
+                      </div>
+                      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                  </div>
+            </div>
+
+            <!-- To give error message when the product cannot be added to shopping-bag with toast; -->
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="toast hide align-items-center text-bg-danger border-0" style="position: absolute; top:-10px; right:30px; width:250px;" 
+                  role="alert" aria-live="assertive" aria-atomic="true" id="error">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        The product cannot be added to shopping-bag!
+                      </div>
+                      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                  </div>
+            </div>
+    
+            <div class="container mt-3">
+                <div class="row">
+                    <!--Tişörtler-->
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty360/product/media/images/20220314/21/69906692/376121761/3/3_org_zoom.jpg" alt="men-tshirt"
+                             title="TRENDYOL MAN Siyah Erkek Relaxed Fit Bisiklet Yaka Kısa Kollu Baskılı T-Shirt"
+                            >
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>TRENDYOL MAN</strong> Siyah Erkek Relaxed Fit Bisiklet Yaka Kısa Kollu...</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">54,99 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty435/product/media/images/20220519/15/113579608/430647125/1/1_org_zoom.jpg" alt="men-tshirt"
+                             title="Erkek Oversize Baskılı %100 Pamuklu Bisiklet Yaka Kısa Kollu T-shirt"
+                            >
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>Rubras</strong> Erkek Oversize Baskılı %100 Pamuklu Bisiklet Yaka...</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">115,39 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty206/product/media/images/20211021/11/153276004/270108814/1/1_org_zoom.jpg" alt="men-tshirt"
+                             title="Nakışlı Siyah %100 Pamuk Oversize Büyük Beden T-shirt"
+                            >
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>Nur Aka by Nurteks Achaeans</strong> Nakışlı Siyah %100 Pamuk Oversize...</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">200 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty442/product/media/images/20220530/22/118477866/488482380/2/2_org_zoom.jpg" alt="men-tshirt"
+                             title="alley Siyah Ön Ve Arka Baskılı %100 Orjinal Pamuk Oversize T-shirt PLAYİNGCARD"
+                            >
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>alley</strong> Siyah Ön Ve Arka Baskılı %100 Orjinal Pamuk</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">61 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <!--Gömlekler-->
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty341/product/media/images/20220223/10/57162631/20531277/1/1_org_zoom.jpg" alt="men-shirt">
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>Tudors</strong> Slim Fit Dar Kesim Düz Erkek Gömlek</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">139,99 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty467/product/media/images/20220702/17/134134113/230805555/1/1_org_zoom.jpg" alt="men-shirt">
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>THE BRANDS</strong> 4 Erkek Siyah Desenli Pamuklu Yazlık Kısa Kollu</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">133 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty454/product/media/images/20220615/14/125859025/203012791/4/4_org_zoom.jpg" alt="men-shirt">
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>Etikmen</strong> Lacivert Kahve Düğmeli Slimfit Hediye Kutulu Gömlek</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">206,99 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty384/product/media/images/20220406/17/84674606/317162491/1/1_org_zoom.jpg" alt="men-shirt">
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>Rubras</strong> Yeni Sezon Kısa Kollu Pamuklu Yazlık Gömlek</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">152,95 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <!--Kazaklar-->
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty369/product/media/images/20220325/11/75807417/84693359/1/1_org_zoom.jpg" alt="men-sweater">
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>Madmext</strong> Erkek Beyaz Bloklu Kazak</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">189,98 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty51/product/media/images/20210109/2/49728184/119381080/4/4_org_zoom.jpg" alt="men-sweater">
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>Tarz Cool</strong> Erkek Siyah Triko Kazak</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">134,64 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty377/product/media/images/20220329/23/78458173/112183548/1/1_org_zoom.jpg" alt="men-sweater"
+                             title="Erkek Siyah-gri Recycle Standart Fit Bisiklet Yaka Triko Kazak"
+                            >
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>Altınyıldız Classics</strong> Erkek Siyah-gri Recycle Standart</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">199,99 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-2">
+                        <div class="card">
+                            <img class="card-img-top" style="height:100%;" src="https://cdn.dsmcdn.com/mnresize/1200/1800/ty311/product/media/images/20220127/11/37483570/226521968/1/1_org_zoom.jpg" alt="men-sweater">
+                            <div class="card-body pt-0">
+                              <p class="card-content"><strong>EMKA GİYİM</strong> Erkek Siyah Tam Balıkçı Yaka Triko Kazak</p>
+                              <span class="hstack">
+                                <p class="card-price pt-0">89,99 TL</p>
+                                <button type="submit" class="btn btn-outline-success btn-add">
+                                    Sepete Ekle
+                                </button>
+                              </span>
+                           </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="bg-dark">
+         <div class="container pt-3">
+             <div class="row">
+                 <div class="col-sm">
+                    <a class="text-decoration-none" href="hakkimizda.html"><h5 class="text-white">E-Commerce Center</h5></a>
+                    <ul class="footer-list pt-2" style="list-style: none;">
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="tel:+905555555555">İletişim: Tel</a></li>
+                        <li><a href="mailto:rozkina19@gmail.com" target="_blank">İletişim: Mail</a></li>
+                    </ul>
+                 </div>
+                 <div class="col-sm">
+                    <h5 class="text-white">About Us</h5>
+                    <ul class="footer-list pt-2" style="list-style: none;">
+                        <li><a href="about-us.html">Who we are</a></li>
+                        <li><a href="tel:+905555555555">Contact: Phone</a></li>
+                        <li><a href="mailto:rozkina19@gmail.com" target="_blank">Contact: Mail</a></li>
+                    </ul>
+                 </div>
+                 <div class="col-sm">
+                    <h5 class="text-white">Sosyal Medya Hesaplarımız</h5>
+                    <ul class="footer-list list-inline pt-2" id="fl-2">
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-instagram" viewBox="-8 -7 30 30">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                  </svg>
+                             </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-facebook" viewBox="-8 -7 30 30">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                                  </svg>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"  class="bi bi-twitter" viewBox="-8 -7 30 30">
+                                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                 </div>
+             </div>
+         </div>
+        </nav>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
