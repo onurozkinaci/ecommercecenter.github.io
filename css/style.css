@@ -138,6 +138,8 @@ of added product in the shopping-bag */
     transform: scale(1.1);
 }
 
+/* Cep telefonu gibi cihazlarda sepete urun eklerken bildirimin
+ diger urunlerin(card) ustunde gozukup altinda kalmamasi icin; */
 #success,#error {
     z-index: 1;
 }
