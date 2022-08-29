@@ -138,5 +138,9 @@ of added product in the shopping-bag */
     transform: scale(1.1);
 }
 
+#success,#error {
+    z-index: 1;
+}
+
 
 
