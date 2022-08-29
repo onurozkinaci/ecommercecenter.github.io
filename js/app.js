@@ -149,13 +149,15 @@ function addToBag(event) {
      //and will be increased later if the user increases it's count in the shopping-bag.
    }
 
-   addedProducts = JSON.parse(sessionStorage.getItem("addedProducts"));
-   addedProducts.forEach(function(item){
-      if(item.name === productText.innerText){
-        alert("Sepete önceden eklediğiniz ürün tekrar eklenemez!")
-        flag=true;
-      }
-   });
+   if(JSON.parse(sessionStorage.getItem("addedProducts")).length > 0){
+      addedProducts = JSON.parse(sessionStorage.getItem("addedProducts"));
+      addedProducts.forEach(function(item){
+         if(item.name === productText.innerText){
+         alert("Sepete önceden eklediğiniz ürün tekrar eklenemez!")
+         flag=true;
+         }
+      });
+   }
 
    if(flag === true) //the product added to shopping bag already;
    {
