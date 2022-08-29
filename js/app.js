@@ -34,7 +34,7 @@ function getProductsFromStorage(){
           inputDOM.value = item.totalCount;
           inputDOM.addEventListener("change",changePrice)
           let priceDOM = document.createElement("p");
-          priceDOM.innerText = `${calculatePrice(item.productPrice) * parseInt(item.totalCount)} TL`;
+          priceDOM.innerText = `${(parseFloat(calculatePrice(item.productPrice)) * parseInt(item.totalCount)).toFixed(2)} TL`;
           console.log(calculatePrice(item.productPrice), parseInt(item.totalCount))
           priceDOM.style.paddingLeft = "50px";
           let spanDOM = document.createElement("span");
