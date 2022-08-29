@@ -9,8 +9,8 @@ let addedProducts = []; //Array()
 getProductsFromStorage();
 function getProductsFromStorage(){
     //addedProducts array will be filled with the taken values from local storage;
-    if(JSON.parse(sessionStorage.getItem("addedProducts")) && JSON.parse(sessionStorage.getItem("addedProducts")).length > 0){
-       addedProducts = JSON.parse(sessionStorage.getItem("addedProducts"));
+    if(JSON.parse(localStorage.getItem("addedProducts")) && JSON.parse(localStorage.getItem("addedProducts")).length > 0){
+       addedProducts = JSON.parse(localStorage.getItem("addedProducts"));
        //console.log(addedProducts);
        let ulDOM = document.querySelector("#productList");
        addedProducts.forEach(function(item){
@@ -57,7 +57,7 @@ function getProductsFromStorage(){
            //Sepetim sayfasindaki footer'in sepette 7'den az urun olmasi halinde asagi sabitlenmesi saglandi;
            //removeFromTheBag() metoduna da aynisi verildi, silinme islemi sonrasi direkt eleman sayisinin 7'nin altina dustugunun
            //algilanmasi icin;
-           if(JSON.parse(sessionStorage.getItem("addedProducts")).length <7){
+           if(JSON.parse(localStorage.getItem("addedProducts")).length <7){
             let navDOM = document.querySelector("#nav-footer");
             navDOM.classList.add("fixed-bottom");
            }
@@ -149,8 +149,8 @@ function addToBag(event) {
      //and will be increased later if the user increases it's count in the shopping-bag.
    }
 
-   if(JSON.parse(sessionStorage.getItem("addedProducts"))){
-      addedProducts = JSON.parse(sessionStorage.getItem("addedProducts"));
+   if(JSON.parse(localStorage.getItem("addedProducts"))){
+      addedProducts = JSON.parse(localStorage.getItem("addedProducts"));
       addedProducts.forEach(function(item){
          if(item.name === productText.innerText){
          alert("Sepete önceden eklediğiniz ürün tekrar eklenemez!")
@@ -169,7 +169,7 @@ function addToBag(event) {
    }
    else{
       addedProducts.push(product);
-      sessionStorage.setItem('addedProducts',JSON.stringify(addedProducts));
+      localStorage.setItem('addedProducts',JSON.stringify(addedProducts));
       // $('#toast-success').toast('show');
       //giving toast success message when the product is added to shopping-bag successfully;
       const toastTrigger = document.getElementById('success');
@@ -204,7 +204,7 @@ function removeFromBag(event) {
     deletedItem.remove();
     //The current elements in a local storage will be transferred into the array
     //before deleting the selected item to prevent complicated deleting situations;
-    addedProducts = JSON.parse(sessionStorage.getItem("addedProducts"));
+    addedProducts = JSON.parse(localStorage.getItem("addedProducts"));
 
     //To find the selected item in the array;
     let index;
@@ -216,11 +216,11 @@ function removeFromBag(event) {
     }
     console.log(index);
     addedProducts.splice(index,1); //the element will be deleted from the array
-    sessionStorage.setItem('addedProducts',JSON.stringify(addedProducts)); //the element will be deleted from the local storage
+    localStorage.setItem('addedProducts',JSON.stringify(addedProducts)); //the element will be deleted from the local storage
     //by updating it with the new(updated) array.*/
     //Sepetim sayfasindaki footer'in sepette 7'den az urun olmasi halinde asagi sabitlenmesi saglandi;
-    if(JSON.parse(sessionStorage.getItem("addedProducts")).length <7){
-      if(JSON.parse(sessionStorage.getItem("addedProducts")).length === 0){
+    if(JSON.parse(localStorage.getItem("addedProducts")).length <7){
+      if(JSON.parse(localStorage.getItem("addedProducts")).length === 0){
          createWarningDiv(); 
          //**To update the total price when there is no item remain after deleting all
          //of the list items;
@@ -238,7 +238,7 @@ function changePrice(event) {
    let productName = event.target.previousSibling;
    let priceItem = event.target.nextSibling;
    //load the array with the fetched datas from local storage;
-   addedProducts = JSON.parse(sessionStorage.getItem("addedProducts"));
+   addedProducts = JSON.parse(localStorage.getItem("addedProducts"));
    let unitPrice;
    let updatedPrice;
    for(let i=0; i<addedProducts.length;i++){
@@ -246,7 +246,7 @@ function changePrice(event) {
         unitPrice = addedProducts[i].productPrice;
         //<To change the product's count with the selected count> both on array and local storage;
         addedProducts[i].totalCount = count;
-        sessionStorage.setItem('addedProducts',JSON.stringify(addedProducts));
+        localStorage.setItem('addedProducts',JSON.stringify(addedProducts));
         //</To change the product's count with the selected count>
         break;
      }
